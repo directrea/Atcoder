@@ -14,13 +14,15 @@ def fast_pow(n, m, MOD=None):  # n^mを高速で行う
 
 
 def Combination(n, r, MOD=None):  # MODが素数
-    if n-r < r:
-        r = n-r
-    num = 1
-    for i in range(1, r+1):
+    facts = [0, 1]
+    for i in range(2, n+1):
+        facts.append(facts[-1]*i)
         if MOD:
-            num *= (n-i+1) * pow(i, MOD-2, MOD) % MOD
-        else:
-            num *= (n-i+1)//i
-        num %= MOD
-    return num
+            facts[-1] %= MOD
+    res = facts[n]
+    if MOD:
+        res *= pow(facts[r]*facts[n-r], MOD-2, MOD)
+        res %= MOD
+    else:
+        res //= facts[r]*facts[n-r]
+    return res
