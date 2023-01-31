@@ -14,7 +14,7 @@ def fast_pow(n, m, MOD=None):  # n^mを高速で行う
 
 
 def Combination(n, r, MOD=None):  # MODが素数
-    facts = [0, 1]
+    facts = [1, 1]
     for i in range(2, n+1):
         facts.append(facts[-1]*i)
         if MOD:
