@@ -1,3 +1,10 @@
+import math
+
+
+def lcm(x, y):  # 最小公倍数
+    return (x*y)//math.gcd(x, y)
+
+
 def fast_pow(n, m, MOD=None):  # n^mを高速で行う
     jyou = [n]
     while 1 << len(jyou) <= m:
@@ -26,3 +33,7 @@ def Combination(n, r, MOD=None):  # MODが素数
     else:
         res //= facts[r]*facts[n-r]
     return res
+
+
+def lcm(x, y):
+    return (x*y)//math.gcd(x, y)
