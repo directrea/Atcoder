@@ -8,8 +8,8 @@ math.cos()
 math.acos()
 
 
-def lcm(x, y):  # 最小公倍数
-    return (x*y)//math.gcd(x, y)
+def mylcm(x, y):  # 最小公倍数
+    return x//math.gcd(x, y)*y
 
 
 def circleXY(d, r):

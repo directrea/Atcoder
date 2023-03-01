@@ -1,0 +1,2 @@
+alias submit='acc s main.py -- --guess-python-interpreter pypy'
+alias t='oj t -c "python3 ./main.py" -d ./tests'
