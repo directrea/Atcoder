@@ -16,13 +16,3 @@ class PrefixSum2D:
         ans -= self.data[q[0]-1][q[3]]+self.data[q[2]][q[1]-1]
         ans += self.data[q[0]-1][q[1]-1]
         return ans
-
-
-h, w = [int(i) for i in input().split()]
-vv = [[int(i) for i in input().split()]for _ in range(h)]
-qn = int(input())
-qs = [[int(i) for i in input().split()]for _ in range(qn)]
-
-ps2 = PrefixSum2D(vv)
-for q in qs:
-    print(ps2.query(q))
